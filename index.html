@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cotizador Grupo Guevara</title>
+  <link rel="stylesheet" href="css/style-leasing.css" />
+  <link rel="icon" href="images/logo.ico">
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <!-- Librería html2canvas -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+
+<body>
+  <!-- Botón hamburguesa SOLO en móvil -->
+  <div id="menu-btn"></div>
+
+  <!-- Sidebar -->
+  <div id="sidebar">
+    <div class="sidebar-logo">
+      <img src="images/logo.ico" alt="Opciones">
+    </div>
+
+    <a href="index.html" class="active">
+      <i class="bi bi-building"></i> Leasing </a>
+
+    <a href="usadas.html">
+      <i class="bi bi-bicycle"></i> Usadas </a>
+
+    <a href="4cuotas.html">
+      <i class="bi bi-credit-card"></i> 4 Cuotas </a>
+
+    <a href="descuento.html">
+      <i class="bi bi-suitcase-lg"></i>  Descuento Leasing </a>
+
+    <a href="desc-usadas.html">
+      <i class="bi bi-bank"></i> Descuento Usadas </a>
+    <a href="lista.html">
+      <i class="bi bi-list-ul"></i> Lista de Precios</a>
+
+    <a href="#" id="captura-btn">
+      <i class="bi bi-camera"></i> Captura de Pantalla </a>
+  </div>
+
+  <!-- Formulario Cotizador -->
+  <form id="formulario">
+    <h3>Grupo Guevara S.A. De C.V.</h3>
+    <h1>Cotizador Motocicletas Leasing</h1>
+
+    <div class="input-grupo-leasing1">
+      <input type="number" id="numero1" placeholder="Ingrese precio de la motocicleta" />
+      <button type="button" class="Btncalp" id="myBtnPrima-leasing">Calcular Prima</button>
+      <input type="number" id="numero2" placeholder="Ingrese prima mínima" />
+      <button type="button" class="Btncalpm" id="myBtnPrimin">Calcular Prima Minima</button>
+    </div>
+
+    <div class="input-grupo-leasing2">
+      <label class="detcalc">Detalles Del Calculo</label>
+      <label class="pcal" id="lbltoprimacal">- Prima Calculada (35%) $0.00</label>
+      <label class="pini" id="lblpagini">- Pago Inicial (A Facturar) $0.00</label>
+      <label class="gadm" id="lblgasadm">- Gastos Admin (En Recibo) $0.00</label>
+      <label class="tralegal" id="lbltralegal">- Trámite Legal (En Recibo) $0.00</label>
+    </div>
+
+    <div class="lblcalprima1" id="lblcalprima1">
+      <label class="laprim1" id="lblprima">Prima minima</label>
+      <label class="lbltoprima" id="lbltoprima1">$0.00</label>
+      <label class="lblsal" id="lblsaldo">Saldo $0.00</label>
+      <label class="lblpreciomo" id="lblpreciom">Precio de la motocicleta $0.00</label>
+    </div>
+
+    <div class="titulo-pago">
+      <label>Planes De Pago Mensual</label>
+    </div>
+
+    <div class="tabla-container1">
+      <table>
+        <tbody>
+          <tr>
+            <td>06 Cuotas de</td>
+            <td class="lbl06_06_06" id="lbl06_06">$0.00</td>
+          </tr>
+          <tr>
+            <td>12 Cuotas de</td>
+            <td class="lbl12_12_12" id="lbl12_12">$0.00</td>
+          </tr>
+          <tr>
+            <td>18 Cuotas de</td>
+            <td class="lbl18_18_18" id="lbl18_18">$0.00</td>
+          </tr>
+          <tr>
+            <td>24 Cuotas de</td>
+            <td class="lbl24_24_24" id="lbl24_24">$0.00</td>
+          </tr>
+          <tr>
+            <td>30 Cuotas de</td>
+            <td class="lbl30_30_30" id="lbl30_30">$0.00</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="input-grupo-leasing3">
+      <button id="NvaCotLeasing" type="button" class="btnnvacotleasing">Nueva Cotizacion</button>
+    </div>
+  </form>
+
+  <!-- Scripts -->
+  <script src="js/nvacotleasing.js"></script>
+  <script src="js/calprimaleasing.js"></script>
+  <script src="js/calpriminleasing.js"></script>
+
+  <!-- Script menú + captura -->
+  <script src="js/menu-captura-leasing.js"></script>
+</body>
+</html>

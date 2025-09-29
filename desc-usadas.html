@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cotizador Grupo Guevara</title>
+  <link rel="stylesheet" href="css/desc-usa.css" />
+  <link rel="icon" href="images/logo.ico">
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+</head>
+<body>
+
+  <!-- Botón hamburguesa SOLO en móvil -->
+
+  <div id="menu-btn"></div>
+
+  <!-- Sidebar -->
+
+  <div id="sidebar">
+
+    <!-- Logo en escritorio -->
+
+    <div class="sidebar-logo">
+      <img src="images/logo.ico" alt="Opciones">
+    </div>
+
+    <a href="index.html">
+      <i class="bi bi-building"></i> Leasing </a>
+
+    <a href="usadas.html">
+      <i class="bi bi-bicycle"></i> Usadas </a>
+
+      <a href="4cuotas.html">
+      <i class="bi bi-credit-card"></i> 4 Cuotas </a>
+
+    <a href="descuento.html">
+      <i class="bi bi-suitcase-lg"></i>  Descuento Leasing </a>
+
+    <a href="desc-usadas.html" class="active">
+      <i class="bi bi-bank"></i> Descuento Usadas </a>
+
+    <a href="lista.html">
+      <i class="bi bi-list-ul"></i> Lista de Precios</a>
+  </div>
+
+  <form id="formulario">
+    <h3>Grupo Guevara S.A. De C.V.</h3>
+    <h1>Cotizador De Descuento Usadas</h1>
+
+    <div class="input-grupo1">
+      <input type="number" id="numero1" placeholder="Ingrese precio de la motocicleta" />
+      <input type="number" id="numero2" placeholder="Ingrese prima (cuota inicial)" />
+      <input type="number" id="numero3" placeholder="Ingrese el valor de la cuota mensual" />
+      <input type="number" id="numero4" placeholder="Ingrese monto total abonado a la fecha" />
+      <input type="number" id="numero5" placeholder="Ingrese n. de meses activos del credito" />
+    
+      <select class="style-select" id="lista">
+        <option value="" disabled selected>Seleccione plazo (meses) del credito</option>
+        <option value="6">06 Meses</option>
+        <option value="12">12 Meses</option>
+        <option value="18">18 Meses</option>
+        <option value="24">24 Meses</option>
+        <option value="30">30 Meses</option>
+      </select>
+
+      <button type="button" id="myBtncalsalcontadesc-usa">Calcular Saldo Contado</button>
+    </div>
+
+    <div class="input-grupo2">
+      <label class="detcalc">Detalles Del Calculo</label>
+      
+      <label class="preciomot" id="lblpreciomot">- Precio de la motocicleta</label>
+      <label class="prima" id="lblprima">- Prima de la motocileta $0.00</label>
+      <label class="Salini" id="lblsalini">- Saldo inicial $0.00</label>
+      <label class="Monmen" id="lblmonmen">- Cuota mensual $0.00</label>
+      <label class="Monpag" id="lblmonpag">- Monto total abonado a la fecha $0.00</label>
+      <!-- <label class="Salres" id="lblsalres">- Saldo + interes $0.00</label> -->
+      <label class="Salpag" id="lblsalpag">- Saldo a pagar de contado $0.00</label>
+      <label class="totpagar" id="lbltotpagar">$0.00</label>
+      <label class="valtotmot" id="lblvaltotmot">- Valor de la motocicleta $0.00</label>
+      <label class="Desapli" id="lbldesapli">- Descuento aplicado $0.00</label>
+      <label class="valtotcliente" id="lblvaltotcliente">- Total cancelado por cliente $0.00</label>
+    </div>
+
+    <div class="input-grupo3">
+      <button id="Nvacalc" type="button" class="btnnvocalcdesc-usa">Nuevo Calculo</button>
+    </div>
+  </form>
+
+  <script src="js/calsaldesc-usa.js"></script>
+  <script src="js/nvocaldesc-usa.js"></script>
+
+  <!-- Script menú -->
+
+  <script>
+    const menuBtn = document.getElementById("menu-btn");
+    const sidebar = document.getElementById("sidebar");
+  
+    // Abrir / cerrar menú en móvil
+
+    menuBtn.addEventListener("click", () => {
+      sidebar.classList.toggle("open");
+      menuBtn.classList.toggle("open"); // cambia ícono
+    });
+  
+    // Cerrar menú al hacer clic fuera (solo móvil)
+
+    document.addEventListener("click", (e) => {
+      if (window.innerWidth <= 768) { 
+        if (!sidebar.contains(e.target) && !menuBtn.contains(e.target)) {
+          sidebar.classList.remove("open");
+          menuBtn.classList.remove("open");
+        }
+      }
+    });
+  </script>
+</body>
+</html>

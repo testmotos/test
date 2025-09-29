@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cotizador Grupo Guevara</title>
+  <link rel="stylesheet" href="css/style-4cuotas.css">
+  <link rel="icon" href="images/logo.ico">
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  
+  <!-- html2canvas -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+
+<body>
+  <!-- Botón hamburguesa -->
+  <div id="menu-btn"></div>
+
+  <!-- Sidebar -->
+  <div id="sidebar">
+    <div class="sidebar-logo">
+      <img src="images/logo.ico" alt="Opciones">
+    </div>
+
+    <a href="index.html">
+      <i class="bi bi-building"></i> Leasing </a>
+
+    <a href="usadas.html">
+      <i class="bi bi-bicycle"></i> Usadas </a>
+
+    <a href="4cuotas.html" class="active">
+      <i class="bi bi-credit-card"></i> 4 Cuotas </a>
+
+    <a href="descuento.html">
+      <i class="bi bi-suitcase-lg"></i>  Descuento Leasing </a>
+
+    <a href="desc-usadas.html">
+      <i class="bi bi-bank"></i> Descuento Usadas </a>
+
+    <a href="lista.html">
+      <i class="bi bi-list-ul"></i> Lista de Precios</a>
+
+    <!-- Botón captura -->
+    <a href="#" id="captura-btn">
+      <i class="bi bi-camera"></i> Captura de Pantalla
+    </a>
+  </div>
+
+  <!-- Formulario Cotizador -->
+  <form id="formulario1">
+    <h3>Grupo Guevara S.A. De C.V.</h3>
+    <h1>Cotizador Motocicletas 4 Cuotas</h1>
+
+    <div class="input-grupo1">
+      <input type="number" id="numero1" placeholder="Ingrese precio de la motocicleta">
+      <button type="button" id="myBtnCalPrima">Calcular Prima</button>
+      <input type="number" id="numero2" placeholder="Ingrese prima minima">
+      <button type="button" id="myBtnPriminima">Calcular Prima Minima</button>
+    </div>
+
+    <div class="input-grupo2" id="lblcalprima1">  
+      <label class="laprim" id="lblprima">Prima minima</label>
+      <label class="lbltoprima" id="lbltoprima1">$0.00</label>
+      <label class="lblsal" id="lblsaldo">Saldo $0.00</label>
+      <label class="lblpreciomo" id="lblpreciomo1">Precio de la motocicleta $0.00</label>    
+    </div>
+
+    <div class="titulo-pago">
+      <label>Planes De Pago Mensual</label>
+    </div>
+
+    <div class="tabla-container tabla-container1">
+      <table>
+        <tbody>
+          <tr>
+            <td id="lblcuo01">Cuota mensual #01</td>
+            <td class="lbl01" id="lblCuota_01">$0.00</td>
+          </tr>
+          <tr>
+            <td id="lblcuo02">Cuota mensual #02</td>
+            <td class="lbl02" id="lblCuota_02">$0.00</td>
+          </tr>
+          <tr>
+            <td id="lblcuo03">Cuota mensual #03</td>
+            <td class="lbl03" id="lblCuota_03">$0.00</td>
+          </tr>
+          <tr>
+            <td id="lblcuo04">Cuota mensual #04</td>
+            <td class="lbl04" id="lblCuota_04">$0.00</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="input-grupo3">
+      <button type="button" class="btnDiluir">Diluir</button>
+      <button type="button" class="btnNvaCot">Nueva Cotizacion</button>
+    </div>
+  </form>
+
+  <!-- Scripts originales -->
+  <script src="js/nvacotizacion-4cuotas.js"></script>
+  <script src="js/diluir-4cuotas.js"></script>
+  <script src="js/calprima-4cuotas.js"></script>
+  <script src="js/calpriminima-4cuotas.js"></script>
+
+  <!-- Script menú + captura -->
+  <script src="js/menu-captura-4cuotas.js"></script>
+</body>
+</html>
