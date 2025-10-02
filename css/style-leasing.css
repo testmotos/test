@@ -1,0 +1,103 @@
+﻿:root {
+  --primary-color: #1e88e5;
+  --primary-gradient: linear-gradient(135deg, #1e88e5, #1565c0);
+  --background: #f5f7fa;
+  --foreground: #ffffff;
+  --text-color: #333;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background-color: var(--background);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 6rem;
+}
+
+form#formulario {
+  background-color: var(--foreground);
+  padding: 1.5rem;
+  border-radius: 15px;
+  width: 100%;
+  max-width: 450px;
+  margin-left: 162px;
+}
+
+h3 { display: none; }
+h1 { text-align: center; color: var(--text-color); font-size: 23px; font-weight: 400; margin-top: -15px; margin-bottom: 0.5rem; }
+
+.input-grupo-leasing1, .input-grupo-leasing2, .input-grupo-leasing3 {
+  display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 0.8rem;
+}
+
+.input-grupo-leasing2 { background-color: #f0f4f8; padding: 0.6rem; border-radius: 8px; display: none; }
+.input-grupo-leasing3 { display: flex; flex-direction: column; gap: 0.6rem; margin-top: 0.5rem; margin-bottom: 25px; display: none; }
+
+.detcalc { font-size: 1.2rem; text-align: center; font-weight: 400; color: var(--text-color); }
+
+input[type="number"] { padding: 0.5rem 0.8rem; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem; transition: border 0.2s, box-shadow 0.3s; }
+input:focus { border-color: var(--primary-color); box-shadow: 0 0 8px rgba(30, 136, 229, 0.3); outline: none; }
+
+button { padding: 0.4rem; background: var(--primary-color); color: white; border: none; border-radius: 8px; font-size: 1rem; cursor: pointer; transition: background 0.3s, transform 0.2s; }
+button:hover { filter: brightness(1.1); transform: scale(1.02); }
+
+.btnnvacotleasing { margin-top: 0.5rem; margin-bottom: -1.5rem; }
+
+.lblcalprima1 label { display: block; }
+.lblcalprima1 { margin: 5px; display: none; }
+.lbltoprima { font-size: 35px; color: var(--primary-color); text-align: center; margin-top: 0px; margin-bottom: 0px; }
+
+.titulo-pago { background-color: #f0f4f8; padding: 0.4rem 1rem; border-radius: 8px; font-size: 1.2rem; font-weight: 400; color: var(--text-color); text-align: center; margin: 0.8rem 0; display: none; }
+
+.tabla-container1 { overflow-x: auto; border-radius: 8px; display: none; }
+table { width: 100%; border-collapse: collapse; background-color: #fafafa; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); border-radius: 8px; overflow: hidden; }
+th, td { padding: 0.4rem; text-align: left; font-size: 1rem; }
+.lbl06_06_06, .lbl12_12_12, .lbl18_18_18, .lbl24_24_24, .lbl30_30_30 { text-align: right; }
+tbody tr:nth-child(even) { background-color: #f0f4f8; }
+
+#menu-btn { font-size: 26px; cursor: pointer; position: fixed; top: 0px; left: 10px; color: var(--text-color); z-index: 1001; background: var(--foreground); padding: 4px 8px; display: none; }
+#menu-btn::before { content: "\2630"; }
+#menu-btn.open::before { content: "\2715"; }
+
+#sidebar { height: 100%; width: 160px; position: fixed; top: 0; left: 0; background-color: #fff; box-shadow: 0 2px 6px rgba(0,0,0,0.15); overflow-x: hidden; padding-top: 120px; z-index: 1000; }
+#sidebar a { padding: 12px 20px; text-decoration: none; font-size: 18px; font-family: 'Roboto', sans-serif; color: #000; display: flex; align-items: center; gap: 10px; transition: 0.2s;}
+#sidebar a:not(.active):hover { background-color: var(--primary-color); color: #fff; }
+#sidebar a:not(.active):hover i { color: #fff; }
+#sidebar a.active { background-color: var(--primary-color); color: #fff; }
+#sidebar a.active i { color: #fff; }
+#sidebar a i { font-size: 18px; transition: color 0.3s; }
+
+.sidebar-logo { position: absolute; top: 30px; left: 25px; }
+.sidebar-logo img { max-width: 100px; height: auto; display: block; }
+
+@media (max-width: 480px) {
+  form#formulario { padding: 0.1rem; background-color: white; margin-left: 0; margin-top: 1.5rem;}
+  #menu-btn { display: flex; }
+  #sidebar { left: -250px; transition: left 0.3s ease, box-shadow 0.3s ease; box-shadow: none; padding-top: 60px; }
+  #sidebar.open { left: 0; box-shadow: 2px 0 12px rgba(0,0,0,0.25); }
+
+  .sidebar-logo { display: none; }
+
+  body { background-color: white; padding: 1rem; }
+  h3 { display: block; text-align: center; color: black; font-size: 1.2rem; font-weight: 400; margin-top: -10px; }
+  h1 { font-size: 1.2rem; color: black; margin-top: 0px; }
+
+  button { font-size: 1.1rem; padding: 0.8rem; }
+  .btnnvacotleasing { padding: 0.8rem; }
+  input[type="number"] { padding: 0.7rem; font-size: 1.1rem; }
+
+  .detcalc { font-size: 1.5rem; }
+  .pcal, .pini, .gadm, .tralegal, .laprim1, .lblsal, .lblpreciomo { font-size: 1.1rem; }
+  .lbltoprima { font-size: 40px; margin-top: 5px; margin-bottom: 5px; }
+  .titulo-pago { font-size: 1.5rem; margin-top: 0.7rem; }
+  th, td { font-size: 1.1rem; }
+
+  .mobile-only { display: flex; }
+}
